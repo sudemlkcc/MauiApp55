@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.Renk"
+             Title="Renk">
+    
+    <Grid RowDefinitions="Auto, *,* " >
+        <VerticalStackLayout Grid.Row="0">
+            <Label Text="Renk seçici"
+                   FontSize="35" 
+                   HorizontalOptions="Center" 
+                   TextColor="Blue" />
+        </VerticalStackLayout>
+        <VerticalStackLayout
+        Spacing="25"
+        Padding="30.0"
+        VerticalOptions="Start" 
+            BackgroundColor="Red"
+            WidthRequest="500"
+            HeightRequest="300"
+            Grid.Row="1"
+            Margin="15" >
+
+            <Slider x:Name="sliderR" 
+                    Minimum="0"
+                    Maximum="300"
+                    MinimumTrackColor="White" 
+                    ValueChanged="sliderR_ValueChanged"/>
+            <Slider x:Name="sliderG" 
+                    Minimum="0"
+                    Maximum="300"
+                    MinimumTrackColor="White"
+                    ValueChanged="sliderG_ValueChanged"/>
+            <Slider x:Name="sliderB"
+                    Minimum="0"
+                    Maximum="300"
+                    MinimumTrackColor="White"
+                    ValueChanged="sliderB_ValueChanged"/>
+            <Label x:Name="colorCodeLabel"
+                   Text="" 
+                   FontSize="20" 
+                   TextColor="White"  
+                   BackgroundColor="Black" 
+                   WidthRequest="150" >
+                <Label.GestureRecognizers >
+                    <TapGestureRecognizer Tapped="ColorCodeLabel_Tapped"/>
+                </Label.GestureRecognizers>
+
+            </Label>
+            <Button Text="Rastgele"
+                    Clicked="Button_Clicked" 
+                    WidthRequest="150" 
+                    Margin="16"
+                    HorizontalOptions="Center"/>
+
+        </VerticalStackLayout >
+        <VerticalStackLayout Grid.Row="2" VerticalOptions="Center">
+            <BoxView x:Name="boxv" 
+                     HeightRequest="300" 
+                     WidthRequest="500"
+                     Margin="20" 
+                     VerticalOptions="Center" 
+                     BackgroundColor="Red"  />
+
+
+        </VerticalStackLayout>
+    </Grid>
+</ContentPage>

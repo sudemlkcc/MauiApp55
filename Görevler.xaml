@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.Görevler"
+             Title="Görevler">
+    <StackLayout>
+        <Entry x:Name="noteEntry" Placeholder="Not:" />
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Add Note" Clicked="OnAddNoteClicked" />
+            <ImageButton Source="edit.png" Clicked="OnEditNoteClicked" />
+            <ImageButton Source="deletee.png" Clicked="OnDeleteNoteClicked" />
+        </StackLayout>
+        <ListView x:Name="notesListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button Text="Delete All Notes" Clicked="OnDeleteNotesClicked" />
+    </StackLayout>
+</ContentPage>

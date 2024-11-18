@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.Görev"
+             Title="Görev">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="ekle" Order="Secondary" IconImageSource="ekle.png"/>
+    </ContentPage.ToolbarItems>
+    <StackLayout>
+
+        <ListView x:Name="NoteListView">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Border>
+
+                            <Grid ColumnDefinitions="Auto,2* " RowDefinitions="Auto,*" >
+                                <StackLayout  >
+                                    <Label Text="{Binding }" 
+                                           VerticalOptions="Center"
+                                           Grid.Column="0"
+                                           Grid.Row="0" />
+
+                                </StackLayout>
+                                <VerticalStackLayout Spacing="10" Grid.Column="1" Grid.RowSpan="2">
+                                    <ImageButton Source="pen.png"
+                                                 Clicked="EditNote" 
+                                                 Grid.Column="1"
+                                                 WidthRequest="17" 
+                                                 HeightRequest="17"
+                                                 VerticalOptions="Start"/>
+                                    <ImageButton Source="delete.png" 
+                                                 Clicked="DeleteNote" 
+                                                 Grid.Column="1"
+                                                 HeightRequest="17"
+                                                 WidthRequest="17"
+                                                 VerticalOptions="End"/>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </Border>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <ImageButton Source="ekle.png" 
+                     Clicked="TakeNote" 
+                     VerticalOptions="Center"
+                     HorizontalOptions="Center"
+                     Margin="70" 
+                     HeightRequest="70" 
+                     WidthRequest="70" />
+
+    </StackLayout>
+</ContentPage>

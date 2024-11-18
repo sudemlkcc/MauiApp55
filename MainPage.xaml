@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp5.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25"
+            VerticalOptions="Center">
+            <Image
+                Source="ben.png"
+                HeightRequest="300"
+                SemanticProperties.Description="Cute dot net bot waving hi to you!"
+                HorizontalOptions="Center"/>
+
+            <Label
+                Text="Sude Malkoç"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <Label
+                Text="Bartın Üniversitesi Bilgisayar Mühendisliği   Ödev - 1"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2"
+                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+
+           
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
